@@ -1,4 +1,4 @@
-# synth-script
+# Synth-Script
 A word to MIDI to audio Project
 
 ### Project Detail:
