@@ -7,7 +7,7 @@ Steps to start flask:
 
 3: Copy paste this into the finalproj directory to start FLASK website stuff:
 
-export FLASK_APP=app.py
+export FLASK_APP=app.py \
 flask run --host=0.0.0.0
 
 
