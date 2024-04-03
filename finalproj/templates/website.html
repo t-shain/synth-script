@@ -15,7 +15,28 @@
     <button id="convert-button" type="button">Convert to MIDI!</button>
 </form>
 
-<p>Write python files that convert words to midi sound data using python</p>
+<p>Synth Script is a website that is hosted by a Raspberry Pi to convert a given text string or file to a song. Specifically it takes a 
+given string and first confirms that it is in English and then converts that string into a MIDI file. 
+The MIDI file is then sent locally to the Raspberry Pi and is saved and arranged using 
+Fluidsynth (a terminal based synth application) and then sent back to the website to be 
+outputted to its internal speakers as an audio file.</p>
+
+<h2> HOW IT WORKS </h2>
+
+<p> 1. Script is typed by user and then sent to the local raspberry pi directory. 
+2. String is changed into a MIDI file 
+3. MIDI file is turned into an Audio file using FluidSynth
+4. Audio file is sent back to the computer 
+5. Audio file is outputted to the computers speakers
+
+Synth Scripts algorithm will use the patterns in the English language to develop these melodies.
+Vowels, string length, word length, punctuation, and word size are the five main features our algorithm uses to produce melodies. 
+Vowels are places where chords will be played
+String length will determine the time signature the notes will be played in as well as the temp of the melody. 
+Punctuation and spaces are places for spaces and breaks in the pattern. 
+Word Length is used to determine the pattern of the other singular notes not in the chord. </p>
+
+    
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="/static/website.js"></script>
