@@ -18,6 +18,7 @@ file.
 Some things to note. 
 - Midi files use integers to represent notes on a piano scale. the value `60` is the middle C of the keyboard
   (C3).
+- The plan is to use a the starting vowel to creat a scale of notes major or minor that can be played. 
 
 ### 3. Audio file 
 midi file is turned into an audio file
