@@ -28,11 +28,17 @@ class Scale:
             midiPitch += 1
         # make Given note the new starting value.
 
+    def key(self, i):
+        if(i >= len(self.notesList)):
+            print("ERROR INVALID KEY")
+        else:
+            return self.notesList[i]
 
     # This function returns a dictionary that is a major scale that can be used for chord creation.
     def major(self):
         # array that stores the values that will be erased in the major scales pattern
         majorArray = [1, 3, 6, 8, 10]
+        # copy over scale dictionary to majorDict variable
         majorDict = self.scale
 
         # make scale dictionary only have major key values

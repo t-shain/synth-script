@@ -31,5 +31,6 @@ audio file is played by the website locally.
 Music writers, producers, DJs, anybody in music industry
 
 
-
+#### Cool strings I found so far
+`Father and Mother` sounds like parenthood. 
 
