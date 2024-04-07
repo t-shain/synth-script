@@ -1,12 +1,11 @@
 # Mido Tester
 # Given the String "To be or not to be" the method "string2Midi" converts it into a midi
 # file that is in the synth script directory.
+
 from scale import Scale
 from mido import Message, MidiFile, MidiTrack, MetaMessage, bpm2tempo, second2tick
 import random
 import sys
-
-# e = one chord, u = two chord, y = three chord, a = four chord , i = five chord, o = six chord
 
 # Gets the number of vowels in a given string
 def countVowel(string):
@@ -101,15 +100,14 @@ def writeOutMIDI(timeSignature, mode, letter, t, strng,):
     t.append(MetaMessage('end_of_track'))
 
 
-# default midi file creator
+#create midi file and assign string to sys argument 
 mid = MidiFile()
 track = MidiTrack()
 string = sys.argv[1]
 
-# creates a dictionary called scale with A major notes.
 
 # create midi track
-#create random bpm
+#create random bpm using seed
 random.seed( len(string))
 randomBPM = random.randint(60, 130)
 mid.tracks.append(track)
