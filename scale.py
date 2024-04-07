@@ -7,7 +7,7 @@ class Scale:
         self.scale = {}
         self.notesList = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']
 
-        midiPitch = 60
+        midiPitch = 48
         startingNoteIndex = 0
 
 
@@ -20,7 +20,7 @@ class Scale:
             self.notesList = self.notesList[startingNoteIndex:] + self.notesList[:startingNoteIndex]
 
         # make scale dictionary filled with 'Note' and then the proper midiPitch value.
-        midiPitch = 60 + startingNoteIndex
+        midiPitch = midiPitch + startingNoteIndex
         for i in range(0, len(self.notesList)):
             self.scale[self.notesList[i]] = midiPitch
             # gives sharps and flats the same value

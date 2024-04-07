@@ -32,5 +32,6 @@ Music writers, producers, DJs, anybody in music industry
 
 
 #### Cool strings I found so far
-`Father and Mother` sounds like parenthood. 
+- `Father and Mother` sounds like parenthood. 
+- `I will show you fear in a handful of dust`
 
