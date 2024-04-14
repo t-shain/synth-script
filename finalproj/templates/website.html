@@ -3,17 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <title>MIDI Converter</title>
+<style>
+body {
+  background-color: powderblue;
+}
+h1 {
+  color: blue;
+  font-size: 50px;
+  font-family: 'Brush Script MT', cursive;
+  text-align: center;
+}
+h2 {
+  color: blue;
+  font: sans-serif;
+  text-align: center;
+  font-size: 45px;
+}
+h3 {
+  color: blue;
+  font-family: arial black;
+  font: sans-serif;
+  text-align: center;
+  font-size: 8px;
+}
+p {
+  color: green;
+  font-size: 14px;
+  text-align: center;
+  font-family: arial;
+  font: sans-serif;
+}
+div {
+  border: 5px solid green;
+  border-radius: 25px;
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+}
+form {
+  text-align: center;
+}
+</style>
 </head>
 <body>
 
+<h3>Thaddeus Shain, John Mekkelsen, and Matt Swaim present..</h3>
 <h1>Just The Music</h1>
-<h2>Text-To-MIDI Converter
+<h2>Text-To-MIDI Converter</h2>
 <br>
-
-<form>
-    <input id="text-input" type="text">
-    <button id="convert-button" type="button">Convert to MIDI!</button>
-</form>
 
 <p>Synth Script is a website that is hosted by a Raspberry Pi to convert a given text string or file to a song. Specifically it takes a 
 given string and first confirms that it is in English and then converts that string into a MIDI file. 
@@ -21,20 +58,23 @@ The MIDI file is then sent locally to the Raspberry Pi and is saved and arranged
 Fluidsynth (a terminal based synth application) and then sent back to the website to be 
 outputted to its internal speakers as an audio file.</p>
 
-<h2> HOW IT WORKS </h2>
 
-<p> 1. Script is typed by user and then sent to the local raspberry pi directory. 
-2. String is changed into a MIDI file 
-3. MIDI file is turned into an Audio file using FluidSynth
-4. Audio file is sent back to the computer 
-5. Audio file is outputted to the computers speakers
+<form>
+    <input id="text-input" type="text"> <br>
+    <button id="convert-button" type="button">Convert to MIDI!</button>
+</form>
 
-Synth Scripts algorithm will use the patterns in the English language to develop these melodies.
-Vowels, string length, word length, punctuation, and word size are the five main features our algorithm uses to produce melodies. 
-Vowels are places where chords will be played
-String length will determine the time signature the notes will be played in as well as the temp of the melody. 
-Punctuation and spaces are places for spaces and breaks in the pattern. 
-Word Length is used to determine the pattern of the other singular notes not in the chord. </p>
+<div>
+<h2> HOW DOES IT WORK? </h2>
+
+<p> 1. A script is typed by user and then sent to the local Raspberry Pi directory. <br>
+2. The string is changed into a MIDI file using the Mido library. <br>
+3. The MIDI file is turned into an audio file using FluidSynth. <br>
+4. The audio file is sent back to the computer. <br>
+5. The audio file is outputted to the computer's speakers. </p><br>
+<img id="chart" src="../images/chart.png"> <br>
+<p> Synth Scripts algorithm will use the patterns in the English language to develop these melodies. Vowels, string length, word length, punctuation, and word size are the five main features our algorithm uses to produce melodies. Vowels are places where chords will be played String length will determine the time signature the notes will be played in as well as the temp of the melody. Punctuation and spaces are places for spaces and breaks in the pattern. Word Length is used to determine the pattern of the other singular notes not in the chord. </p>
+</div>
 
     
 
@@ -43,4 +83,3 @@ Word Length is used to determine the pattern of the other singular notes not in 
 <!-- NOTE: when a .js file is created in the static folder, either use "website.js" as the name of that file, or change the above line accordingly -->
 </body>
 </html>
-
