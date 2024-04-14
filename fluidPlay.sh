@@ -8,13 +8,13 @@ chmod +x /Users/thaddeus/Documents/GitHub/synth-script/fluidPlay.sh
 killall fluidsynth
 
 #create midi file with string
-python3 MidiCreate.py "I will show you fear in a handful of dust"
+python3 MidiCreate.py 'to be or not to be' 'A' 'minor'
 
 # set sound
-export DESIRED_SOUNDFONT=//Users/thaddeus/Desktop/FluidR3_GM/FluidR3gm.sf2
+export DESIRED_SOUNDFONT=/Users/thaddeus/Documents/GitHub/synth-script/soundFonts/FluidR3gm.sf2
 export MIDI=test.mid
 
 # create .wav file using soundfont and MIDI file. 
 
-fluidsynth -a coreaudio -m coremidi -i -F out.wav "${DESIRED_SOUNDFONT}" "${MIDI}" & 
+fluidsynth -a coreaudio -m coremidi -i -F out.wav "${DESIRED_SOUNDFONT}" "${MIDI}" &
 

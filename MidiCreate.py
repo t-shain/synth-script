@@ -104,18 +104,31 @@ def writeOutMIDI(timeSignature, mode, letter, t, strng,):
 mid = MidiFile()
 track = MidiTrack()
 string = sys.argv[1]
-
+key = sys.argv[2]
+mode = sys.argv[3]
+if mode not in ['major', 'minor',]:
+    mode = 'major'
+if key not in ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']:
+    key = 'C'
 
 # create midi track
 #create random bpm using seed
 random.seed( len(string))
 randomBPM = random.randint(60, 130)
+
+# create midi track
 mid.tracks.append(track)
-track.append(MetaMessage('key_signature', key='D'))
+track.append(MetaMessage('key_signature', key=key))
 track.append(MetaMessage('set_tempo', tempo=bpm2tempo(randomBPM)))
 
+if len(string) % 2 != 0:
+    tempo = '3/4'
+    track.append(MetaMessage('time_signature', numerator=3, denominator=4))
+else:
+    temp = '4/4'
+    track.append(MetaMessage('time_signature', numerator=4, denominator=4))
+
 # run algo with a 4/4 time signature
-track.append(MetaMessage('time_signature', numerator=4, denominator=4))
-writeOutMIDI("4/4", 'major', 'D#', track, string)
+writeOutMIDI(tempo, mode, key, track, string)
 
 mid.save('test.mid')
