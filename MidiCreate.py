@@ -7,6 +7,7 @@ from mido import Message, MidiFile, MidiTrack, MetaMessage, bpm2tempo, second2ti
 import random
 import sys
 
+
 # Gets the number of vowels in a given string
 def countVowel(string):
     # start at 0 vowels
@@ -22,18 +23,17 @@ def countVowel(string):
 # params: timeSignature is a string that will run a curtain section of code based off if time signature is
 # 3/4 or 4/4, letter is the starting note that the major scale will be created from. t is the track object from Mido,
 # and str is the string that will be used to generate the pattern.
-def writeOutMIDI(timeSignature, mode, letter, t, strng,):
+def writeOutMIDI(mode, letter, t, strng, ):
     # creates dictionary
     scale = Scale(letter)
     # makes scale major or minor values depending on param mode
     if mode == 'minor':
-       mde = scale.minor()
+        mde = scale.minor()
     else:
         mde = scale.major()
     # created an array with the values of the keys in scale.
     keys = list(mde.keys())
     # goes through each character in string and does something.
-
 
     for i in range(0, len(strng)):
         velocity = random.randint(55, 68)
@@ -91,29 +91,42 @@ def writeOutMIDI(timeSignature, mode, letter, t, strng,):
                 # put five cord on midi track
                 print('i')
                 t.append(Message('note_on', channel=1, note=scale.getEntry(keys[4]), velocity=velocity, time=1))
+                t.append(Message('note_on', channel=1, note=scale.getEntry(keys[6]), velocity=velocity, time=1))
+                t.append(Message('note_on', channel=1, note=scale.getEntry(keys[1]), velocity=velocity, time=1))
                 t.append(Message('note_off', channel=1, note=scale.getEntry(keys[4]), velocity=velocity, time=960))
+                t.append(Message('note_off', channel=1, note=scale.getEntry(keys[6]), velocity=velocity, time=960))
+                t.append(Message('note_off', channel=1, note=scale.getEntry(keys[1]), velocity=velocity, time=960))
             elif lowerCase == 'o':
                 # put six cord on midi track
                 print('o')
                 t.append(Message('note_on', channel=1, note=scale.getEntry(keys[5]), velocity=velocity, time=1))
+                t.append(Message('note_on', channel=1, note=scale.getEntry(keys[0]), velocity=velocity, time=1))
+                t.append(Message('note_on', channel=1, note=scale.getEntry(keys[2]), velocity=velocity, time=1))
                 t.append(Message('note_off', channel=1, note=scale.getEntry(keys[5]), velocity=velocity, time=960))
+                t.append(Message('note_off', channel=1, note=scale.getEntry(keys[0]), velocity=velocity, time=960))
+                t.append(Message('note_off', channel=1, note=scale.getEntry(keys[2]), velocity=velocity, time=960))
     t.append(MetaMessage('end_of_track'))
 
 
-#create midi file and assign string to sys argument 
+# create midi file and assign string to sys argument
 mid = MidiFile()
 track = MidiTrack()
 string = sys.argv[1]
-key = sys.argv[2]
-mode = sys.argv[3]
-if mode not in ['major', 'minor',]:
+if len(sys.argv) < 3:
+    mode = 'major'
+    key = 'C'
+else:
+    key = sys.argv[2]
+    mode = sys.argv[3]
+
+if mode not in ['major', 'minor', ]:
     mode = 'major'
 if key not in ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']:
     key = 'C'
 
 # create midi track
-#create random bpm using seed
-random.seed( len(string))
+# create random bpm using seed
+random.seed(len(string))
 randomBPM = random.randint(60, 130)
 
 # create midi track
@@ -129,6 +142,6 @@ else:
     track.append(MetaMessage('time_signature', numerator=4, denominator=4))
 
 # run algo with a 4/4 time signature
-writeOutMIDI(tempo, mode, key, track, string)
+writeOutMIDI(mode, key, track, string)
 
-mid.save('test.mid')
+mid.save('in.mid')

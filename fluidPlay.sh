@@ -6,15 +6,24 @@ chmod +x /Users/thaddeus/Documents/GitHub/synth-script/fluidPlay.sh
 
 # kill all other running's of fluidsynth
 killall fluidsynth
+# destroy old midi file
 
 #create midi file with string
-python3 MidiCreate.py 'to be or not to be' 'A' 'minor'
+python3 MidiCreate.py 'website' 'B' 'major'
 
 # set sound
-export DESIRED_SOUNDFONT=/Users/thaddeus/Documents/GitHub/synth-script/soundFonts/FluidR3gm.sf2
-export MIDI=test.mid
+export DESIRED_SOUNDFONT=/Users/thaddeus/Documents/GitHub/synth-script/soundFonts/Piano.sf2
+export MIDI=in.mid
 
-# create .wav file using soundfont and MIDI file. 
+rm 'in.wav'
 
-fluidsynth -a coreaudio -m coremidi -i -F out.wav "${DESIRED_SOUNDFONT}" "${MIDI}" &
+wait
+
+# create .wav file using soundfont and MIDI file.
+fluidsynth -a coreaudio -m coremidi -i -F in.wav "${DESIRED_SOUNDFONT}" "${MIDI}" &
+
+wait
+
+exit 0
+
 
