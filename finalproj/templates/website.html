@@ -28,10 +28,12 @@ h3 {
 }
 p {
   color: green;
-  font-size: 14px;
+  font-size: 16px;
   text-align: center;
   font-family: arial;
   font: sans-serif;
+  margin-right: 100px;
+  margin-left: 100px;
 }
 div {
   border: 5px solid green;
@@ -52,7 +54,7 @@ img {
 </head>
 <body>
 
-<h3>Thaddeus Shain, John Mekkelsen, and Matt Swaim present..</h3>
+<h3>John Mekkelsen, Thaddeus Shain, and Matt Swaim present..</h3>
 <h1>Just The Music</h1>
 <h2>Text-To-MIDI Converter</h2>
 <br>
@@ -65,9 +67,11 @@ outputted to its internal speakers as an audio file.</p>
 
 
 <form>
-    <input id="text-input" type="text"> <br>
+    <input id="text-input" type="text" name="usertext"><br>
     <button id="convert-button" type="button">Convert to MIDI!</button>
 </form>
+
+<h4 id="returned_string"></h4>
 
 <div>
 <h2> HOW DOES IT WORK? </h2>
@@ -81,10 +85,7 @@ outputted to its internal speakers as an audio file.</p>
 <p> Synth Scripts algorithm will use the patterns in the English language to develop these melodies. Vowels, string length, word length, punctuation, and word size are the five main features our algorithm uses to produce melodies. Vowels are places where chords will be played String length will determine the time signature the notes will be played in as well as the temp of the melody. Punctuation and spaces are places for spaces and breaks in the pattern. Word Length is used to determine the pattern of the other singular notes not in the chord. </p>
 </div>
 
-    
-
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="/static/website.js"></script>
-<!-- NOTE: when a .js file is created in the static folder, either use "website.js" as the name of that file, or change the above line accordingly -->
 </body>
 </html>
