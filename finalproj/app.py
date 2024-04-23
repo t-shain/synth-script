@@ -27,6 +27,7 @@ def string_return():
 
     # run midi create
     # command in terminal looks like: python3 static/MidiCreate.py 'hello' 'C' 'minor'
+    # TODO: Add a call to fluidPlay.sh to make a wav file using the midi file that was made
     midiProcess = subprocess.run(['python3', 'static/MidiCreate.py', text_string, 'C', 'minor'])
     if midiProcess.returncode == 0:
         subprocess.Popen("echo 'MIDI file created!'", shell=True)
