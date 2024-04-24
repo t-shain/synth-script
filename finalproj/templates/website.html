@@ -24,7 +24,7 @@ h3 {
   font-family: arial black;
   font: sans-serif;
   text-align: center;
-  font-size: 8px;
+  font-size: 13px;
 }
 p {
   color: green;
@@ -40,7 +40,7 @@ div {
   border-radius: 25px;
   padding: 20px;
   margin: 20px;
-  text-align: center;
+  text-align: right;
 }
 form {
   text-align: center;
@@ -55,31 +55,52 @@ img {
 <body>
 
 <h3>John Mekkelsen, Thaddeus Shain, and Matt Swaim present..</h3>
-<h1>Just The Music</h1>
+<h1>Synth Script</h1>
 <h2>Text-To-MIDI Converter</h2>
 <br>
 
-<p>Synth Script is a website that is hosted by a Raspberry Pi to convert a given string to a song. Specifically it takes a
-given string, then converts that string into a MIDI file.
-The MIDI file is then sent locally to the Raspberry Pi and is saved and arranged using 
-Fluidsynth (a terminal based synth application) and then sent back to the website to be 
-outputted to its internal speakers as an audio file.</p>
+<div>
+
 <form>
-    <audio controls>
-  <source src="../static/in.wav" type="audio/wav">
-Your browser does not support the audio element.
-
-</audio>
-
-    <br>
-    <br>
-
+        <label for="key">Select a Key:</label>
+    <select id="key" name="key">
+      <option value="C">C</option>
+      <option value="C#">C#</option>
+      <option value="D">D</option>
+      <option value="D#">D#</option>
+      <option value="E">E</option>
+      <option value="F">F</option>
+      <option value="F#">F#</option>
+      <option value="G">G</option>
+      <option value="G#">G#</option>
+      <option value="A">A</option>
+      <option value="A#">A#</option>
+      <option value="B">B</option>
+    </select>
+        <label for="mode">Select a Mode:</label>
+    <select id="mode" name="mode">
+      <option value="major">Major</option>
+      <option value="minor">Minor</option>
+    </select>
 </form>
 
 <form>
-    <input id="text-input" type="text" name="usertext"><br>
+    <br>
+    <input id="text-input" type="text" name="usertext">
     <button id="convert-button" type="button">Convert to MIDI!</button>
+    <br>
+    <br>
+    <br>
+    <audio controls>
+    <source src="../static/in.wav" type="audio/wav">
+    Your browser does not support the audio element.
+    </audio>
+
 </form>
+
+    </div>
+
+
 
 <h3 id="returned_string"></h3>
 

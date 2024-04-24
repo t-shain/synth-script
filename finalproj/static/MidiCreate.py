@@ -43,7 +43,6 @@ def writeOutMIDI(mode, letter, t, strng, ):
         if strng[i] not in 'aeiouAEIOU':
             if strng[i] == '.':
                 # do something fun!
-                print(".")
                 t.append(Message('note_on', channel=1, note=scale.getEntry(keys[0]), velocity=velocity, time=1))
                 t.append(Message('note_off', channel=1, note=scale.getEntry(keys[0]), velocity=velocity, time=960))
 
@@ -61,7 +60,6 @@ def writeOutMIDI(mode, letter, t, strng, ):
             lowerCase = strng[i].lower()
             if lowerCase == 'e':
                 # put one cord on midi track
-                print('e')
                 t.append(Message('note_on', channel=1, note=scale.getEntry(keys[0]), velocity=velocity, time=1))
                 t.append(Message('note_on', channel=1, note=scale.getEntry(keys[2]), velocity=velocity, time=1))
                 t.append(Message('note_on', channel=1, note=scale.getEntry(keys[4]), velocity=velocity, time=1))
@@ -71,7 +69,6 @@ def writeOutMIDI(mode, letter, t, strng, ):
                 t.append(Message('note_off', channel=1, note=scale.getEntry(keys[4]), velocity=velocity, time=960))
             elif lowerCase == 'u':
                 # put two cord on midi track
-                print('u')
                 t.append(Message('note_on', channel=1, note=scale.getEntry(keys[1]), velocity=velocity, time=1))
                 t.append(Message('note_on', channel=1, note=scale.getEntry(keys[3]), velocity=velocity, time=1))
                 t.append(Message('note_on', channel=1, note=scale.getEntry(keys[5]), velocity=velocity, time=1))
@@ -80,7 +77,6 @@ def writeOutMIDI(mode, letter, t, strng, ):
                 t.append(Message('note_off', channel=1, note=scale.getEntry(keys[5]), velocity=velocity, time=960))
             elif lowerCase == 'a':
                 # put four cord on midi track
-                print('a')
                 t.append(Message('note_on', channel=1, note=scale.getEntry(keys[3]), velocity=velocity, time=1))
                 t.append(Message('note_on', channel=1, note=scale.getEntry(keys[5]), velocity=velocity, time=1))
                 t.append(Message('note_on', channel=1, note=scale.getEntry(keys[0]), velocity=velocity, time=1))
@@ -89,7 +85,6 @@ def writeOutMIDI(mode, letter, t, strng, ):
                 t.append(Message('note_off', channel=1, note=scale.getEntry(keys[0]), velocity=velocity, time=960))
             elif lowerCase == 'i':
                 # put five cord on midi track
-                print('i')
                 t.append(Message('note_on', channel=1, note=scale.getEntry(keys[4]), velocity=velocity, time=1))
                 t.append(Message('note_on', channel=1, note=scale.getEntry(keys[6]), velocity=velocity, time=1))
                 t.append(Message('note_on', channel=1, note=scale.getEntry(keys[1]), velocity=velocity, time=1))
@@ -98,7 +93,6 @@ def writeOutMIDI(mode, letter, t, strng, ):
                 t.append(Message('note_off', channel=1, note=scale.getEntry(keys[1]), velocity=velocity, time=960))
             elif lowerCase == 'o':
                 # put six cord on midi track
-                print('o')
                 t.append(Message('note_on', channel=1, note=scale.getEntry(keys[5]), velocity=velocity, time=1))
                 t.append(Message('note_on', channel=1, note=scale.getEntry(keys[0]), velocity=velocity, time=1))
                 t.append(Message('note_on', channel=1, note=scale.getEntry(keys[2]), velocity=velocity, time=1))
@@ -106,6 +100,7 @@ def writeOutMIDI(mode, letter, t, strng, ):
                 t.append(Message('note_off', channel=1, note=scale.getEntry(keys[0]), velocity=velocity, time=960))
                 t.append(Message('note_off', channel=1, note=scale.getEntry(keys[2]), velocity=velocity, time=960))
     t.append(MetaMessage('end_of_track'))
+    print(f"{strng} has been written to MIDI")
 
 
 # create midi file and assign string to sys argument

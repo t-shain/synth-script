@@ -1,20 +1,19 @@
-// NOTE: THIS FILE DOES NOT CURRENTLY FUNCTION CORRECTLY AND SHOULD ONLY BE USED AS A BASELINE FOR WEBSITE.JS
-// please edit whatever you think is neccessary for this file to work
-// the comments describe what SHOULD be happening but isn't
 
-
-function display(textString, onSuccess) {
+function display(textString,keyString,modeString, onSuccess) {
 	// ajax allows the function to take place without having to refresh webpage
     $.ajax({
 	    // searches for string_return in app.py
 	url: "string_return",
 	data: {
-	    text_string: textString
+	    text_string: textString,
+		key_string : keyString,
+		mode_string : modeString,
         },
-	    // lets function know to return json data type and look for GET method
+	    // allows function know to return json data type and look for GET method
 	dataType: "json",
         type: "GET",
-	    // what this does is if the ajax request is successful, it executes the specified function in the parameter (in the below case, that's specifed as function(returnedString))
+	    // what this does is if the ajax request is successful, it executes the specified function in
+		// the parameter (in the below case, that's specified as function(returnedString))
 	success: function(response) {
 	    onSuccess(response);
 	}
@@ -24,8 +23,10 @@ function display(textString, onSuccess) {
 $("#convert-button").on("click", function() {
 	// textString is set to the value the user inputted in the text box
     let textString = $("#text-input").val();
-	// display method from above is called 
-    display(textString, function(returnedString) {
-	$("#returned_string").text(returnedString);
+	let key = $("#key").val();
+	let mode = $("#mode").val();
+	// display method from above is called
+    display(textString, key, mode, function(returnedString) {
+		$("#returned_string").text(returnedString);
     });
 });
