@@ -100,7 +100,7 @@ def writeOutMIDI(mode, letter, t, strng, ):
                 t.append(Message('note_off', channel=1, note=scale.getEntry(keys[0]), velocity=velocity, time=960))
                 t.append(Message('note_off', channel=1, note=scale.getEntry(keys[2]), velocity=velocity, time=960))
     t.append(MetaMessage('end_of_track'))
-    print(f"{strng} has been written to MIDI")
+    print(f"{strng} with key {letter} {mode} has been written to MIDI")
 
 
 # create midi file and assign string to sys argument
@@ -142,4 +142,5 @@ def run(s, k, m):
     mid.save('in.mid')
 
 
+# main run
 run(sys.argv[1],sys.argv[2],sys.argv[3])
