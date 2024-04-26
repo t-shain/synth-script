@@ -12,7 +12,7 @@ killall fluidsynth
 
 # set sound
 # TODO: these paths need to be changed and the soundFonts folder needs to be added to your PI if its not already
-export DESIRED_SOUNDFONT=/home/thaddeus/Desktop/synth-script/finalproj/soundFonts/Piano.sf2
+export DESIRED_SOUNDFONT=/home/thaddeus/Desktop/synth-script/finalproj/soundFonts/Cello.sf2
 export MIDI=in.mid
 
 rm 'static/in.wav'
@@ -28,3 +28,4 @@ wait
 mv 'in.wav' static
 
 exit 0
+

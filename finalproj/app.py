@@ -35,6 +35,12 @@ def string_return():
     if midiProcess.returncode == 0:
         subprocess.Popen("echo 'MIDI file created!'", shell=True)
     else:
-        subprocess.Popen("echo 'ERROR'", shell=True)
+        subprocess.Popen("echo 'ERROR on MIDI'", shell=True)
+    # get wav file
+    wavProcess = subprocess.run(['bash', 'fluidPlay.sh'])
+    if wavProcess.returncode == 0:
+        subprocess.Popen("echo 'WAV file created!'", shell=True)
+    else:
+        subprocess.Popen("echo 'ERROR on WAV'", shell=True)
     # converted to json data and returned to website.js
     return json.dumps(text_string)
