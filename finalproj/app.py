@@ -1,5 +1,3 @@
-# like website.js, this technically does not work, so edit as necessary 
-# comments are what SHOULD be happening but isn't
 
 
 from flask import Flask, render_template, request
