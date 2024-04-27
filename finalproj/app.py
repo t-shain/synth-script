@@ -1,5 +1,4 @@
 
-
 from flask import Flask, render_template, request
 import json
 import subprocess
@@ -14,6 +13,7 @@ def home():
     return render_template("website.html")
 
 
+
 # string_return is called from website.js
 @app.route("/string_return", methods=["GET"])
 def string_return():
@@ -21,6 +21,7 @@ def string_return():
     text_string = request.values["text_string"]
     key_string = request.values["key_string"]
     mode_string = request.values["mode_string"]
+    inst_string = "Cello.sf2"
 
     # run shell commands
     subprocess.Popen('echo "Running conversion.."', shell=True)
@@ -31,14 +32,14 @@ def string_return():
     midiProcess = subprocess.run(['python3', 'static/MidiCreate.py', text_string, key_string, mode_string])
     # if return code is 0 then the shell call above ran correctly.
     if midiProcess.returncode == 0:
-        subprocess.Popen("echo 'MIDI file created!'", shell=True)
+        # get wav file
+        wavProcess = subprocess.run(['bash', 'fluidPlay.sh', inst_string])
+        if wavProcess.returncode == 0:
+            subprocess.Popen(f"echo 'WAV file created using {inst_string}'",shell=True)
+        else:
+            subprocess.Popen("echo 'ERROR on WAV'", shell=True)
     else:
         subprocess.Popen("echo 'ERROR on MIDI'", shell=True)
-    # get wav file
-    wavProcess = subprocess.run(['bash', 'fluidPlay.sh'])
-    if wavProcess.returncode == 0:
-        subprocess.Popen("echo 'WAV file created!'", shell=True)
-    else:
-        subprocess.Popen("echo 'ERROR on WAV'", shell=True)
+
     # converted to json data and returned to website.js
     return json.dumps(text_string)

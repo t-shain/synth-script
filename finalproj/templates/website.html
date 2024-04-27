@@ -67,7 +67,6 @@ img {
       <option value="C">C</option>
       <option value="C#">C#</option>
       <option value="D">D</option>
-      <option value="D#">D#</option>
       <option value="E">E</option>
       <option value="F">F</option>
       <option value="F#">F#</option>
@@ -77,21 +76,29 @@ img {
       <option value="A#">A#</option>
       <option value="B">B</option>
     </select>
+
         <label for="mode">Select a Mode:</label>
     <select id="mode" name="mode">
       <option value="major">Major</option>
       <option value="minor">Minor</option>
     </select>
+
+        <label for="instrument">Select an Instrument:</label>
+    <select id="instrument" name="instrument">
+      <option value="Piano.sf2">Piano</option>
+      <option value="Cello.sf2">Cello</option>
+        <option value="Bass.sf2">Brass</option>
+    </select>
 </form>
 
 <form>
     <br>
-    <input id="text-input" type="text" name="usertext">
+    <label for="text-input"></label><input id="text-input" type="text" name="usertext">
     <button id="convert-button" type="button">Convert to MIDI!</button>
     <br>
     <br>
     <br>
-    <audio controls>
+    <audio id="player" controls >
     <source src="../static/in.wav" type="audio/wav">
     Your browser does not support the audio element.
     </audio>
