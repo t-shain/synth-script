@@ -21,7 +21,7 @@ def string_return():
     text_string = request.values["text_string"]
     key_string = request.values["key_string"]
     mode_string = request.values["mode_string"]
-    inst_string = "Cello.sf2"
+    inst_string = request.values["instrument_string"]
 
     # run shell commands
     subprocess.Popen('echo "Running conversion.."', shell=True)
