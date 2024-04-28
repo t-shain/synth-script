@@ -13,11 +13,11 @@ def home():
     return render_template("website.html")
 
 
-
 # string_return is called from website.js
 @app.route("/string_return", methods=["GET"])
 def string_return():
     # user input is received
+    subprocess.run(['rm', 'static/in.wav'])
     text_string = request.values["text_string"]
     key_string = request.values["key_string"]
     mode_string = request.values["mode_string"]

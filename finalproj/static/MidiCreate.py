@@ -122,11 +122,11 @@ def run(s, k, m):
     # create midi track
     # create random bpm using seed
     random.seed(len(string))
-    randomBPM = random.randint(60, 130)
+    randomBPM = random.randint(85, 140)
 
     # create midi track
     mid.tracks.append(track)
-    track.append(MetaMessage('key_signature', key=key))
+    track.append(MetaMessage('key_signature', key=key[0]))
     track.append(MetaMessage('set_tempo', tempo=bpm2tempo(randomBPM)))
 
     if len(string) % 2 != 0:
