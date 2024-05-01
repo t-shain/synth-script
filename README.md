@@ -13,7 +13,7 @@ and softer effect to the output, respectively. The string is then converted into
 
 ### 2. Algorithm
 **The algorithm in MidiCreate.py is applied to the string.**
-The string is put into a custom algorithm (MidiCreate.py). The algorithm uses the vowels, spaces, punctuation, string length, and the user-inputted choices of key, instrument, and mode to determine how to create the MIDI file. 
+The string is put into our custom algorithm. The algorithm uses the vowels, spaces, punctuation, string length, and the user-inputted choices of key, instrument, and mode to determine how to create the MIDI file. 
 
 ### 3. Creating the audio file 
 **After the algorithm is finished, it exists as a MIDI file.** Because MIDIs are not actual audio files, one more conversion needs to happen, that being the conversion from MIDI to WAV. This happens in fluidPlay.sh.
