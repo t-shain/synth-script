@@ -24,6 +24,29 @@ The string is put into our custom algorithm. The algorithm uses the vowels, spac
 **Note: The output process may work slightly different depending on the browser. Our code is optimized for Safari, and has worked decently enough on Chrome. Other browsers were not tested.**
 
 
+## References
+
+Ardour Digital Audio Workstation. (n.d). Creating Music with Ardour. https://manual.ardour.org/introduction-to-ardour/welcome-to-ardour/ 
+
+Avid. (2023, November 22). What is a DAW? Your Guide to Digital Audio Workstations. https://www.avid.com/resource-center/what-is-a-daw 
+
+Derselbst. (2003, March 9).  FluidSynth. https://github.com/FluidSynth/fluidsynth.
+
+Floyd Steinburg. (2019, December 10). How to use a Raspberry PI as a synthesizer [Video]. YouTube. https://youtu.be/ae5TYhnhp3w?si=UZyRmO26huN4v60r
+
+Fluidsynth. (n.d.). A SoundFont Synthesizer. https://www.fluidsynth.org/
+
+MDN Web Docs. (2023, December 5). Web MIDI API. https://developer.mozilla.org/en-US/docs/Web/API/Web_MIDI_API 
+
+Michael Hahn.  (2023, July 25). What Is MIDI? How To Use the Most Powerful Tool in Music. LANDR Blog. https://blog.landr.com/what-is-midi/
+
+Ole Martin Bjørndalen Raphaël Doursenaud. (n.d). Mido - MIDI Objects For Python. https://mido.readthedocs.io/en/latest/intro.html 
+
+Python Software Foundation. (n.d.). Python 3.12.2 documentation. https://docs.python.org/3/ 
+
+
+
+
 
 
 
