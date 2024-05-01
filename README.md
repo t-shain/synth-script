@@ -15,18 +15,14 @@ and softer effect to the output, respectively. The string is then converted into
 **The algorithm in MidiCreate.py is applied to the string.**
 The string is put into a custom algorithm (MidiCreate.py). The algorithm uses the vowels, spaces, punctuation, string length, and the user-inputted choices of key, instrument, and mode to determine how to create the MIDI file. 
 
-### 3. Audio file 
-After the algorithm is finished, it exists as a MIDI file. Because MIDIs are not actual audio files, one more conversion needs to happen, that being the conversion from MIDI to WAV. This happens in fluidPlay.sh.
+### 3. Creating the audio file 
+**After the algorithm is finished, it exists as a MIDI file.** Because MIDIs are not actual audio files, one more conversion needs to happen, that being the conversion from MIDI to WAV. This happens in fluidPlay.sh.
 
 ### 4. Output 
-Finally, the fully converted WAV is returned to the user as a fully playable website element.
+**The WAV file conversion is complete.** Finally, the fully converted WAV is returned to the user as a fully playable website element.
 
 
-## Target market:
-Music writers, producers, DJs, anybody in music industry
 
 
-#### Cool strings I found so far
-- `Father and Mother` sounds like parenthood. 
-- `I will show you fear in a handful of dust`
+
 
