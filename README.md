@@ -19,7 +19,9 @@ The string is put into a custom algorithm (MidiCreate.py). The algorithm uses th
 **After the algorithm is finished, it exists as a MIDI file.** Because MIDIs are not actual audio files, one more conversion needs to happen, that being the conversion from MIDI to WAV. This happens in fluidPlay.sh.
 
 ### 4. Output 
-**The WAV file conversion is complete.** Finally, the fully converted WAV is returned to the user as a fully playable website element.
+**The WAV file conversion is complete.** Finally, the fully converted WAV is returned to the user as a fully playable website element. The user might have to refresh the page for the audio file to appear.
+
+**Note: The output process may work slightly different depending on the browser. Our code is optimized for Safari, and has worked decently enough on Chrome. Other browsers were not tested.**
 
 
 
