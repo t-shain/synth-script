@@ -1,5 +1,5 @@
 # Synth-Script
-A string-to-WAV Project that implements Python, Flask, JavaScript, HTML, and CSS.
+A string-to-WAV Project that implements Python, Flask, JavaScript, HTML, and CSS, and the Mido and FluidSynth Python libraries.
 
 ## Project Detail:
 This program converts user-inputted strings into WAV files that are then
@@ -9,23 +9,17 @@ outputted for the user as an audio file.
 **Get a string from a website that a user gives.**
 A user is able to enter a string into the text box on the website. Our website allows for added
 effects depending on what the user enters, such as ! and ... adding a more upbeat
-and softer effect to the output, respectively.
+and softer effect to the output, respectively. The string is then converted into JavaScript and displayed back to the user, and then is put through our algorithm. The user is also able to choose the key, instrument, and mode of the desired WAV file.
 
 ### 2. Algorithm
-string is put into a custom algorithm that turns it into a midi file. 
-The algorithm uses the vowels, spaces, punctuation, and string length to determine how to create the midi
-file. 
-
-Some things to note. 
-- Midi files use integers to represent notes on a piano scale. the value `60` is the middle C of the keyboard
-  (C3).
-- The plan is to use a the starting vowel to creat a scale of notes major or minor that can be played. 
+**The algorithm in MidiCreate.py is applied to the string.**
+The string is put into a custom algorithm (MidiCreate.py). The algorithm uses the vowels, spaces, punctuation, string length, and the user-inputted choices of key, instrument, and mode to determine how to create the MIDI file. 
 
 ### 3. Audio file 
-midi file is turned into an audio file
+After the algorithm is finished, it exists as a MIDI file. Because MIDIs are not actual audio files, one more conversion needs to happen, that being the conversion from MIDI to WAV. This happens in fluidPlay.sh.
 
 ### 4. Output 
-audio file is played by the website locally. 
+Finally, the fully converted WAV is returned to the user as a fully playable website element.
 
 
 ## Target market:
